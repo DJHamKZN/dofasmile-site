@@ -1,0 +1,86 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <title>Мои заявки — ДОФА СМАЙЛ</title>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="robots" content="noindex,nofollow" />
+  <link rel="icon" href="../favicon.svg" type="image/svg+xml" />
+  <link href="https://schoolmed.bzrt.ru/public/servicedesk/style.css" type="text/css" rel="stylesheet" />
+  <style type="text/css">
+    body { margin: 0; padding: 16px; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Arial, sans-serif; background: #f6f7fa; }
+    .df-head { max-width: 900px; margin: 0 auto 16px; display: flex; align-items: center; gap: 12px; }
+    .df-head img { height: 40px; }
+    .df-head h1 { font-size: 18px; color: #4F6790; margin: 0; }
+    #service_desk { max-width: 900px; margin: 0 auto; background: #fff; border: 1px solid #dde3ee; border-radius: 8px; padding: 12px; }
+  </style>
+  <script type="text/javascript">
+  function getSessionId() {
+      const cookieName = 'tw_sd_sid';
+
+      // Поиск cookie
+      const match = document.cookie.match(
+          new RegExp('(?:^|;\\s*)' + cookieName + '=([^;]*)')
+      );
+
+      if (match) {
+          return decodeURIComponent(match[1]);
+      }
+
+      // Генерация случайного идентификатора
+      const chars = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
+      const length = 32;
+      let value = '';
+
+      if (window.crypto && crypto.getRandomValues) {
+          const bytes = new Uint8Array(length);
+          crypto.getRandomValues(bytes);
+
+          for (let i = 0; i < length; i++) {
+              value += chars[bytes[i] % chars.length];
+          }
+      } else {
+          // Fallback для старых браузеров
+          for (let i = 0; i < length; i++) {
+              value += chars.charAt(Math.floor(Math.random() * chars.length));
+          }
+      }
+
+      // Cookie на 10 лет
+      const expires = new Date();
+      expires.setFullYear(expires.getFullYear() + 10);
+
+      document.cookie =
+          `${cookieName}=${encodeURIComponent(value)}; ` +
+          `expires=${expires.toUTCString()}; ` +
+          `path=/; SameSite=Lax; Secure`;
+
+      return value;
+  }
+
+  var tw_servicedesk_params=
+  {
+   url:'https://schoolmed.bzrt.ru',
+   sid:getSessionId(),
+   container:'service_desk',
+   user_name:'',
+   user_email:'',
+   user_company:'',
+   incidents_per_page:5,
+   comments_per_page:10,
+   filter_groups:'1002',
+   filter_categories:'5,6',
+   filter_products:'1,2,3,4',
+   logo:'',
+  }
+  </script>
+  <script src="https://schoolmed.bzrt.ru/public/servicedesk/script.js" type="text/javascript"></script>
+</head>
+<body>
+<div class="df-head">
+  <img src="res/dofa.png" alt="ДОФА СМАЙЛ" />
+  <h1>Мои заявки в клинику ДОФА СМАЙЛ</h1>
+</div>
+<div id="service_desk"></div>
+</body>
+</html>

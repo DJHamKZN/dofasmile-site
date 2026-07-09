@@ -1,0 +1,54 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="noindex,nofollow">
+  <title>Чат с клиникой — ДОФА СМАЙЛ</title>
+  <link rel="icon" href="../favicon.svg" type="image/svg+xml">
+  <link href="src/chat.css" type="text/css" rel="stylesheet" />
+  <script src="src/chat-language.js" type="text/javascript"></script>
+  <script src="src/chat.js" type="text/javascript"></script>
+  <style type="text/css">
+    .chat .background { background: #cbd5e7; opacity: 0.3; filter: alpha(opacity=30); }
+    .chat .window { border: 1px solid #889CBE; background: #ffffff; position: absolute; z-index: 1000; height: auto !important; width: auto !important; padding: 15px 0; max-width: 300px; box-shadow: 0 0 20px #586377; -moz-box-shadow: 0 0 20px #586377; -webkit-box-shadow: 0 0 20px #586377; }
+    .chat .window .header { background: #ffffff; color: #4F6790; text-align: center; font-size: 14px; padding: 0 20px; font-weight: bolder; }
+    .chat .window .content { position: static; padding: 0 20px; }
+    .chat .window .content div { padding: 8px 0 16px 0 !important;}
+    .chat .window button { height: 24px; background-position: 0 -13px; }
+    .chat .window span.score { margin-bottom: 0 !important; }
+    .chat .body .login { background: url("res/dofa.png") 142px 0 transparent no-repeat; padding-top: 100px; }
+    .chat .body .login .title { color: #4F6790; font-size: 16px; font-weight: bold; }
+    .chat .body .login .info { color: #565656; font-size: 12px; }
+    .chat .body .login label { color: #565656; }
+    .chat .body .dialog .commands { background: url("res/dofa.png") 5px 5px transparent no-repeat; padding-top: 35px; }
+    .chat .body .dialog .list { top:54px; }
+    .chat .body .dialog .network-messsage { margin: 0 5px; float: none; }
+  </style>
+</head>
+<body>
+<a href="zayavki.html" style="position:fixed;top:10px;right:12px;z-index:2000;font:600 13px -apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Arial,sans-serif;color:#4F6790;text-decoration:none;background:#fff;border:1px solid #dde3ee;border-radius:16px;padding:6px 14px;">Мои заявки →</a>
+<div id="chat"></div>
+<script type="text/javascript">
+window.Chat.init(document.getElementById('chat'),
+  {
+   url : 'https://schoolmed.bzrt.ru/',
+   filter : 'Консультация',
+   name : '',
+   email : '',
+   phone : '',
+   account : '',
+   group_id : '1002',
+   groups : [{"id":"1002","online":0,"name":"Консультация","allow_offline":1}],
+   cache : true,
+   group : 'Консультация',
+   topic : 'Первичный приём',
+   config: 9,
+   files : 'src/',
+   login_text : 'Режим работы: 8:00 - 20:00 в будние дни',
+   window_title : 'ДОФА СМАЙЛ',
+  });
+</script>
+</body>
+</html>

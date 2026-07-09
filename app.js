@@ -605,3 +605,12 @@ document.addEventListener("focusin",function(e){var t=e.target;if(t&&t.tagName==
 document.addEventListener("submit",function(e){var f=e.target,t=f&&f.querySelector&&f.querySelector('input[type="tel"]');if(!t)return;var n=(t.value.match(/\d/g)||[]).length;if(n!==11){e.preventDefault();e.stopImmediatePropagation();t.setCustomValidity("Введите номер полностью: +7 (XXX) XXX-XX-XX");t.reportValidity();setTimeout(function(){t.setCustomValidity("")},2500)}},true);
 })();
 ;(function(){if(window.top===window)return;document.addEventListener("click",function(e){var a=e.target&&e.target.closest&&e.target.closest("a[href]");if(!a)return;var h=a.getAttribute("href")||"";if(/^(tel:|mailto:)/.test(h)){e.preventDefault();try{window.ym&&window.ym(104730457,"reachGoal",/^tel:/.test(h)?"phone_click":"email_click")}catch(_){}try{window.parent.postMessage({df:"tel",href:h},"*")}catch(_){}return}if(/^https:\/\/(max\.ru|vk\.(ru|com)|wa\.me|t\.me|api\.whatsapp\.com)\//.test(h)){e.preventDefault();try{window.ym&&window.ym(104730457,"reachGoal","messenger_click")}catch(_){}try{window.parent.postMessage({df:"ext",href:h},"*")}catch(_){}}},true)})();
+;(function(){try{
+var css=".df-chat-btn{position:fixed;left:16px;bottom:88px;z-index:9990;display:flex;align-items:center;gap:8px;background:#0047AB;color:#fff;border:none;border-radius:28px;padding:12px 18px;font:600 14px/1 -apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Arial,sans-serif;cursor:pointer;box-shadow:0 4px 14px rgba(0,0,0,.35)}.df-chat-btn:hover{background:#0056d6}@media(min-width:768px){.df-chat-btn{bottom:24px}}";
+var st=document.createElement("style");st.appendChild(document.createTextNode(css));document.head.appendChild(st);
+var b=document.createElement("button");b.className="df-chat-btn";b.type="button";
+b.innerHTML='<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>Чат с клиникой';
+b.addEventListener("click",function(){try{window.ym&&window.ym(104730457,"reachGoal","chat_open")}catch(_){}window.open("https://dofa-site.website.yandexcloud.net/crm/chat.html","_blank")});
+function add(){document.body.appendChild(b)}
+if(document.body)add();else document.addEventListener("DOMContentLoaded",add);
+}catch(_){}})();
