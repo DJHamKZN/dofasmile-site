@@ -5,5 +5,6 @@ header .main-btn{flex-shrink:1 !important;white-space:normal !important;text-ali
 @media (min-width:1280px) and (max-width:1500px){
   header nav{display:none !important}
 }
-header button[title*="слабовидящих"],header button[title="Обычная версия"]{margin-left:14px}
-@media (min-width:1700px){header nav{margin-left:22px}}
+/* кнопка «Слабовидящим» убрана из шапки по решению заказчика (13.07) */
+header button[title*="слабовидящих"],header button[title="Обычная версия"]{display:none !important}
+@media (min-width:1280px){header nav{margin-left:20px}}
